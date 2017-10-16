@@ -12,24 +12,23 @@
 
         android:padding="8dp"
         android:scaleType="centerInside"
-        android:src="@drawable/logo1"
         android:visibility="visible" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/Name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="hello"/>
+        />
 
     <TextView
         android:id="@+id/Price"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="hello"/>
+        />
 
     <TextView
 
-        android:id="@+id/score"
+        android:id="@+id/Score"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="hello"/>

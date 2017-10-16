@@ -15,6 +15,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Rice extends AppCompatActivity {
 
@@ -24,21 +25,14 @@ public class Rice extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.menubase);
 
-      /*  ArrayList<Restaurant1> data = new ArrayList<>();
-        data.add(new Restaurant1("성북구 ","02-760-1678","11:00~22:00"));
-        MyAdapter adapter = new MyAdapter(data, this, R.layout.item2);
 
-        ListView listView = (ListView)findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-        listView.setDividerHeight(5);
-*/
         ArrayList<Restaurant1menu> data1 = new ArrayList<>();
-        data1.add(new Restaurant1menu(R.drawable.m4,"비빔밥","4000원"));
-        data1.add(new Restaurant1menu(R.drawable.m5,"제육덮밥","4500원"));
+        data1.add(new Restaurant1menu(R.drawable.m4,"비빔밥","4000원","4.3"));
+        data1.add(new Restaurant1menu(R.drawable.m5,"제육덮밥","4500원","4.3"));
 
-        MyAdapter2 adapter1 = new MyAdapter2(data1, this, R.layout.item2);
+        final MyAdapter2 adapter1 = new MyAdapter2(data1, this, R.layout.item2);
 
         ListView listView1 = (ListView)findViewById(R.id.ListView4);
         listView1.setAdapter( adapter1);
@@ -59,6 +53,15 @@ public class Rice extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View vClicked,
                                     int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), FoodDetail.class);
+                int Image = ((Restaurant1menu)adapter1.getItem(position)).getFood();
+               String name = ((Restaurant1menu)adapter1.getItem(position)).getName();
+                String price = ((Restaurant1menu)adapter1.getItem(position)).getPrice();
+                String average = ((Restaurant1menu)adapter1.getItem(position)).getScore();
+                intent.putExtra("Image", Image);
+                intent.putExtra("Name", name);
+                intent.putExtra("Price", price);
+                intent.putExtra("Average", average);
+
                 startActivity(intent);
             }
         });

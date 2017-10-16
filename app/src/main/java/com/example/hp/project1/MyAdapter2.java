@@ -50,12 +50,12 @@ public class MyAdapter2 extends BaseAdapter {
         ImageView Image = view.findViewById(R.id.iconItem); //view class 에서 정의되어진 findViewById사용
         TextView text4 = view.findViewById(R.id.textItem4);
         TextView text5 = view.findViewById(R.id.textItem5);
-       // TextView Score = view.findViewById(R.id.score);
+        TextView Score = view.findViewById(R.id.Score);
 
         Image.setImageResource(nData.get(j).getFood());
         text4.setText(nData.get(j).getName());
         text5.setText(nData.get(j).getPrice());
-       // Score.setText(nData.get(j).getScore());
+        Score.setText(nData.get(j).getScore());
 
         return view;
     }

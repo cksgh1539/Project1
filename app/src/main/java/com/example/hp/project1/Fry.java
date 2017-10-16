@@ -26,7 +26,7 @@ public class Fry extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.menubase);
 
       /*  ArrayList<Restaurant1> data = new ArrayList<>();
         data.add(new Restaurant1("성북구 ","02-760-1678","11:00~22:00"));
@@ -37,9 +37,9 @@ public class Fry extends AppCompatActivity {
         listView.setDividerHeight(5);*/
 
         ArrayList<Restaurant1menu> data1 = new ArrayList<>();
-        data1.add(new Restaurant1menu(R.drawable.m6,"돈까스덮밥","5000원"));
-        data1.add(new Restaurant1menu(R.drawable.m7,"돈까스 오므라이스","5500원"));
-        data1.add(new Restaurant1menu(R.drawable.m8,"등심돈까스","4500원"));
+        data1.add(new Restaurant1menu(R.drawable.m6,"돈까스덮밥","5000원","4.3"));
+        data1.add(new Restaurant1menu(R.drawable.m7,"돈까스 오므라이스","5500원","4.3"));
+        data1.add(new Restaurant1menu(R.drawable.m8,"등심돈까스","4500원","4.3"));
         MyAdapter2 adapter1 = new MyAdapter2(data1, this, R.layout.item2);
 
         ListView listView1 = (ListView)findViewById(R.id.ListView4);

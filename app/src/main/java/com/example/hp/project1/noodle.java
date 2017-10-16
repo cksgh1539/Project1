@@ -30,9 +30,9 @@ public class noodle extends AppCompatActivity {
 
 
         ArrayList<Restaurant1menu> data1 = new ArrayList<>();
-        data1.add(new Restaurant1menu(R.drawable.m1,"냉모밀","4000원"));
-        data1.add(new Restaurant1menu(R.drawable.m2,"물냉면","4000원"));
-        data1.add(new Restaurant1menu(R.drawable.m3,"김밥","2000원"));
+        data1.add(new Restaurant1menu(R.drawable.m1,"냉모밀","4000원","4.3"));
+        data1.add(new Restaurant1menu(R.drawable.m2,"물냉면","4000원","4.3"));
+        data1.add(new Restaurant1menu(R.drawable.m3,"김밥","2000원","4.3"));
         MyAdapter2 adapter1 = new MyAdapter2(data1,this,R.layout.item2);
 
         ListView listView1 = (ListView)findViewById(R.id.ListView4);

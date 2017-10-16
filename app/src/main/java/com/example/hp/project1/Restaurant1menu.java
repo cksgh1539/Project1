@@ -8,14 +8,14 @@ public class Restaurant1menu {
     private int Food;
     private String Name;
     private String Price;
-  //  private String Score;
+    private String Score;
 
 
-    public Restaurant1menu(int Food, String Name, String Price){
+     Restaurant1menu(int Food, String Name, String Price, String Score){
         this.Food = Food;
         this.Name = Name;
         this.Price = Price;
-   //     this.Score = Score;
+        this.Score = Score;
     }
 
 
@@ -27,6 +27,6 @@ public class Restaurant1menu {
     public String getPrice(){
         return  Price;
     }
-  //  public String getScore(){return Score;}
+    public String getScore(){return Score;}
 
 }

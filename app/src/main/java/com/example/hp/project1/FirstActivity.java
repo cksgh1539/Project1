@@ -46,8 +46,17 @@ public class FirstActivity extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View vClicked,
                                     int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), noodle.class);
-                startActivity(intent);
+                if(position == 0){
+                    Intent intent = new Intent(getApplicationContext(), noodle.class);
+                    startActivity(intent);
+                }else if(position == 1){
+                    Intent intent = new Intent(getApplicationContext(), Rice.class);
+                    startActivity(intent);
+                }else if(position == 2){
+                    Intent intent = new Intent(getApplicationContext(), Fry.class);
+                    startActivity(intent);
+                }
+
             }
 
         });

@@ -74,25 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ListView1"></ListView>
-    <!--<Button
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Roll / Noodles"
-        android:onClick="button1"/>
-
-    <Button
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rice"
-        android:onClick="button2"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fry"
-        android:onClick="button3" />-->
 
 </LinearLayout>
 
