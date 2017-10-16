@@ -34,16 +34,16 @@ public class FoodDetail extends AppCompatActivity {
         int Image = intent.getExtras().getInt("Image");
         String name = intent.getExtras().getString("Name");
         String price = intent.getExtras().getString("Price");
-        //   String average = intent.getExtras().getString("Average");
+        String average = intent.getExtras().getString("Average");
 
         TextView  txt = (TextView)findViewById(R.id.Name);
         TextView txt2 = (TextView)findViewById(R.id.Price);
-        //   TextView txt3 = (TextView)findViewById(R.id.Score);
+        TextView txt3 = (TextView)findViewById(R.id.Score);
         ImageView img = (ImageView)findViewById(R.id.imageView);
         img.setImageResource(Image);
         txt.setText(name);
         txt2.setText(price);
-        //    txt3.setText(average);
+        txt3.setText(average);
 
 
 

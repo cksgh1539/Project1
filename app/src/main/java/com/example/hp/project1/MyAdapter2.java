@@ -10,6 +10,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * Created by hp on 2017-10-16.
+ */
+
 public class MyAdapter2 extends BaseAdapter {
     private ArrayList<Restaurant1menu> nData;
     private Context nContext;
@@ -20,7 +24,6 @@ public class MyAdapter2 extends BaseAdapter {
         nContext = context1;
         nResource = resource1;
     }
-
     @Override
     public int getCount() {
         return nData.size(); //MyAdapter가 관리하는 항목의 개수
@@ -39,7 +42,6 @@ public class MyAdapter2 extends BaseAdapter {
     @Override
     //i번째항목, ListView, Parent group
     public View getView(int j, View view, ViewGroup viewGroup) { //i번째 항목에 대한 view를 만듦
-
         if (view == null) {
             LayoutInflater inflater = (LayoutInflater) nContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(nResource, viewGroup,false);
@@ -48,12 +50,12 @@ public class MyAdapter2 extends BaseAdapter {
         ImageView Image = view.findViewById(R.id.iconItem); //view class 에서 정의되어진 findViewById사용
         TextView text4 = view.findViewById(R.id.textItem4);
         TextView text5 = view.findViewById(R.id.textItem5);
-        //  TextView Score = view.findViewById(R.id.Score);
+        TextView Score = view.findViewById(R.id.Score);
 
         Image.setImageResource(nData.get(j).getFood());
         text4.setText(nData.get(j).getName());
         text5.setText(nData.get(j).getPrice());
-        // Score.setText(nData.get(j).getScore());
+        Score.setText(nData.get(j).getScore());
 
         return view;
     }

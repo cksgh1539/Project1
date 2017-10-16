@@ -3,7 +3,6 @@ package com.example.hp.project1;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -28,9 +27,10 @@ public class Rice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menubase);
 
+
         ArrayList<Restaurant1menu> data1 = new ArrayList<>();
-        data1.add(new Restaurant1menu(R.drawable.m4,"비빔밥","4000원"));
-        data1.add(new Restaurant1menu(R.drawable.m5,"제육덮밥","4500원"));
+        data1.add(new Restaurant1menu(R.drawable.m4,"비빔밥","4000원","4.3"));
+        data1.add(new Restaurant1menu(R.drawable.m5,"제육덮밥","4500원","4.3"));
 
         final MyAdapter2 adapter1 = new MyAdapter2(data1, this, R.layout.item2);
 
@@ -50,24 +50,25 @@ public class Rice extends AppCompatActivity {
         Log.i(TAG, getLocalClassName() + ".onCreate");
 
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View vClicked, int position, long id) {
-
+            public void onItemClick(AdapterView<?> parent, View vClicked,
+                                    int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), FoodDetail.class);
-
                 int Image = ((Restaurant1menu)adapter1.getItem(position)).getFood();
-                String name = ((Restaurant1menu)adapter1.getItem(position)).getName();
+               String name = ((Restaurant1menu)adapter1.getItem(position)).getName();
                 String price = ((Restaurant1menu)adapter1.getItem(position)).getPrice();
-                // String average = ((Restaurant1menu)adapter1.getItem(position)).getScore();
-
+                String average = ((Restaurant1menu)adapter1.getItem(position)).getScore();
                 intent.putExtra("Image", Image);
                 intent.putExtra("Name", name);
                 intent.putExtra("Price", price);
-                //   intent.putExtra("Average", average);
+                intent.putExtra("Average", average);
 
                 startActivity(intent);
             }
         });
+
+
     }
+
 
     @Override
     protected void onStart() {
@@ -99,9 +100,5 @@ public class Rice extends AppCompatActivity {
         Log.i(TAG, getLocalClassName() + ".onDestroy");
     }
 
-    public void calling(View v) {
-        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:027604499"));
-        startActivity(intent);
-    }
 
 }
