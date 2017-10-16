@@ -1,8 +1,5 @@
 package com.example.hp.project1;
 
-/**
- * Created by hp on 2017-10-15.
- */
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-
-/**
- * Created by B10709 on 2017-09-27.
- */
 
 public class MyAdapter extends BaseAdapter {
     private ArrayList<Restaurant1> mData;
@@ -44,6 +37,7 @@ public class MyAdapter extends BaseAdapter {
 
     @Override           //i번째항목, ListView, Parent group
     public View getView(int i, View view, ViewGroup viewGroup) { //i번째 항목에 대한 view를 만듦
+
         if (view == null) {
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(mResource, viewGroup,false);
