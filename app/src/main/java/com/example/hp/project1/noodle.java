@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ListAdapter;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 
@@ -25,6 +27,11 @@ public class noodle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menubase);
+
+        Intent intent = getIntent();
+        String Menu = intent.getStringExtra("Menu");
+        TextView  menu = (TextView)findViewById(R.id.menubar);
+        menu.setText(Menu);
 
         ArrayList<Restaurant1menu> data1 = new ArrayList<>();
         data1.add(new Restaurant1menu(R.drawable.m1,"냉모밀","4000원"));

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -27,6 +28,11 @@ public class Rice extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menubase);
+
+        Intent intent = getIntent();
+        String Menu = intent.getStringExtra("Menu");
+        TextView menu = (TextView)findViewById(R.id.menubar);
+        menu.setText(Menu);
 
         ArrayList<Restaurant1menu> data1 = new ArrayList<>();
         data1.add(new Restaurant1menu(R.drawable.m4,"비빔밥","4000원"));

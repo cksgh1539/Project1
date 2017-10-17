@@ -22,11 +22,12 @@ public class FirstActivity extends AppCompatActivity {
     static final String TAG = "Chan";
     private ListAdapter createAdapter() {
 
-        String[] items = {"Roll/Noodles", "Rice", "Fry" };
+        String[] items = {"Roll & Noodles", "Rice", "Fry" };
 
         ArrayAdapter<String> adapt = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
         return adapt;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +44,15 @@ public class FirstActivity extends AppCompatActivity {
                                     int position, long id) {
                 if(position == 0){
                     Intent intent = new Intent(getApplicationContext(), noodle.class);
+                    intent.putExtra("Menu", "Roll & Noodles");
                     startActivity(intent);
                 }else if(position == 1){
                     Intent intent = new Intent(getApplicationContext(), Rice.class);
+                    intent.putExtra("Menu", "Rice");
                     startActivity(intent);
                 }else if(position == 2){
                     Intent intent = new Intent(getApplicationContext(), Fry.class);
+                    intent.putExtra("Menu", "Fry");
                     startActivity(intent);
                 }
             }

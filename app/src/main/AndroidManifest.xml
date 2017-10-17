@@ -30,7 +30,9 @@
             android:parentActivityName=".FirstActivity">
         </activity>
 
-        <activity android:name=".FoodDetail"></activity>
+        <activity android:name=".FoodDetail"
+            android:parentActivityName=".FirstActivity">
+        </activity>
 
         <uses-permission android:name="android.permission.CALL_PHONE"/>
 

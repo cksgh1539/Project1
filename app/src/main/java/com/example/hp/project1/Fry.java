@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,11 @@ public class Fry extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menubase);
+
+        Intent intent = getIntent();
+        String Menu = intent.getStringExtra("Menu");
+        TextView menu = (TextView)findViewById(R.id.menubar);
+        menu.setText(Menu);
 
         ArrayList<Restaurant1menu> data1 = new ArrayList<>();
         data1.add(new Restaurant1menu(R.drawable.m6,"돈까스덮밥","5000원"));
