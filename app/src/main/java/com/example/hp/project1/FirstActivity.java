@@ -91,8 +91,8 @@ public class FirstActivity extends AppCompatActivity {
     }
 
     public void calling(View v) {
-        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:027604499"));
-        startActivity(intent);
+        Intent intent2 = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:027604499"));
+        startActivity(intent2);
     }
 
 }

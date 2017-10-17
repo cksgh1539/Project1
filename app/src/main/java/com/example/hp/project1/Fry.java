@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
@@ -112,5 +113,9 @@ public class Fry extends AppCompatActivity {
         Log.i(TAG, getLocalClassName() + ".onDestroy");
     }
 
+    public void calling(View v) {
+        Intent intent2 = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:027604499"));
+        startActivity(intent2);
+    }
 
 }

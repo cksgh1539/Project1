@@ -3,6 +3,7 @@ package com.example.hp.project1;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -111,5 +112,9 @@ public class noodle extends AppCompatActivity {
         Log.i(TAG, getLocalClassName() + ".onDestroy");
     }
 
+    public void calling(View v) {
+        Intent intent2 = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:027604499"));
+        startActivity(intent2);
+    }
 
 }

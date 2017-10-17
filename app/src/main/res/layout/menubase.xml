@@ -84,7 +84,6 @@
         android:layout_height="wrap_content"
         android:background="#FFA3E5E8"
         android:gravity="center"
-        android:text="Roll and noodles"
         android:textSize="18dp" />
 
     <ListView
