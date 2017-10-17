@@ -30,33 +30,23 @@ public class FoodDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fooddetail);
+
         Intent intent = getIntent();
+
         int Image = intent.getExtras().getInt("Image");
         String name = intent.getExtras().getString("Name");
         String price = intent.getExtras().getString("Price");
-        //   String average = intent.getExtras().getString("Average");
+        String score = intent.getExtras().getString("Score");
 
         TextView  txt = (TextView)findViewById(R.id.Name);
         TextView txt2 = (TextView)findViewById(R.id.Price);
-        //   TextView txt3 = (TextView)findViewById(R.id.Score);
+        TextView txt3 = (TextView)findViewById(R.id.Score);
         ImageView img = (ImageView)findViewById(R.id.imageView);
+
         img.setImageResource(Image);
         txt.setText(name);
         txt2.setText(price);
-        //    txt3.setText(average);
-
-
-
-
-        //   text3.setText(sData.get(i).getScore());
-
-       /* ArrayList<Restaurant1menu> data1 = new ArrayList<>();
-        data1.add(new Restaurant1menu(Image,"name","price"));
-
-        MyAdapter3 adapter1 = new MyAdapter3(data1, this, R.layout.fooddetail);
-        ListView listView = (ListView)findViewById(R.id.listView);
-       listView.setAdapter(adapter1);
-        listView.setDividerHeight(5);*/
+        txt3.setText(score);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {

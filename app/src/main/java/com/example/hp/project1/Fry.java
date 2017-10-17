@@ -33,7 +33,13 @@ public class Fry extends AppCompatActivity {
         data1.add(new Restaurant1menu(R.drawable.m7,"돈까스 오므라이스","3000원"));
         data1.add(new Restaurant1menu(R.drawable.m8,"등심돈까스","4500원"));
 
+        ArrayList<Restaurant1Food> data2 = new ArrayList<>();
+        data2.add(new Restaurant1Food(R.drawable.m6,"돈까스덮밥","5000원","평점: ★★"));
+        data2.add(new Restaurant1Food(R.drawable.m7,"돈까스 오므라이스","3000원","평점: ★★"));
+        data2.add(new Restaurant1Food(R.drawable.m8,"등심돈까스","4500원","평점: ★★"));
+
         final MyAdapter2 adapter1 = new MyAdapter2(data1, this, R.layout.item2);
+        final MyAdapter3 adapter2 = new MyAdapter3(data2,this,R.layout.item2);
 
         ListView listView1 = (ListView)findViewById(R.id.ListView4);
         listView1.setAdapter(adapter1);
@@ -55,15 +61,15 @@ public class Fry extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), FoodDetail.class);
 
-                int Image = ((Restaurant1menu)adapter1.getItem(position)).getFood();
-                String name = ((Restaurant1menu)adapter1.getItem(position)).getName();
-                String price = ((Restaurant1menu)adapter1.getItem(position)).getPrice();
-                // String average = ((Restaurant1menu)adapter1.getItem(position)).getScore();
+                int Image = ((Restaurant1Food)adapter2.getItem(position)).getFood();
+                String name = ((Restaurant1Food)adapter2.getItem(position)).getName();
+                String price = ((Restaurant1Food)adapter2.getItem(position)).getPrice();
+                String score = ((Restaurant1Food)adapter2.getItem(position)).getScore();
 
                 intent.putExtra("Image", Image);
                 intent.putExtra("Name", name);
                 intent.putExtra("Price", price);
-                //   intent.putExtra("Average", average);
+                intent.putExtra("Score", score);
 
                 startActivity(intent);
             }

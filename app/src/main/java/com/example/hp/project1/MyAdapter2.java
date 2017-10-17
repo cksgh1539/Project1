@@ -45,7 +45,7 @@ public class MyAdapter2 extends BaseAdapter {
             view = inflater.inflate(nResource, viewGroup,false);
         }
 
-        ImageView Image = view.findViewById(R.id.iconItem); //view class 에서 정의되어진 findViewById사용
+        ImageView Image = view.findViewById(R.id.iconItem);
         TextView text4 = view.findViewById(R.id.textItem4);
         TextView text5 = view.findViewById(R.id.textItem5);
         //  TextView Score = view.findViewById(R.id.Score);
